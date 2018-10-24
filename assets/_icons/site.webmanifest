@@ -1,0 +1,14 @@
+{
+    "name": "{ j }",
+    "short_name": "{ j }",
+    "icons": [
+        {
+            "src": "{{ '/android-chrome-192x192.png' | relative_url }}",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#D8D8D8",
+    "background_color": "#D8D8D8",
+    "display": "standalone"
+}

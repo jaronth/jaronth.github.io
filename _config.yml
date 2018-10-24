@@ -1,0 +1,42 @@
+# jaronhouseholder.com
+title: Jaron Householder
+description: >-
+  jaron householder. 
+  \{ j \}
+baseurl: ""
+url: "https://jaronhouseholder.com"
+
+# Google Analytics
+google_analytics: UA-63329353-1
+
+# About/contact
+logo:                assets/jaronth.png
+author:
+  name:              Jaron Householder
+  url:               https://jaronhouseholder.com
+  iMessage:          im@jaronth.com
+  GitHub:            jaronth
+  Spotify:           jaronhouseholder
+social:
+  links:
+                   - https://www.linkedin.com/in/jaron-householder-01816810b
+                   - https://github.com/jaronth
+
+# Build settings
+markdown: kramdown
+theme: null
+future: true
+collections_dir: assets
+collections:
+  icons:
+    output: true
+    permalink: :name
+  fonts:
+    output: true
+    permalink: :name
+sass:
+  style: compressed
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag

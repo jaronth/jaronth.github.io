@@ -1,0 +1,84 @@
+---
+---
+{%- capture style -%}
+	{%- include normalize.css -%}
+	{%- include skeleton.css -%}
+	{%- include fonts.css -%}
+	{%- include custom.css -%}
+{%- endcapture -%}  
+{%- capture scripts -%}
+  	{%- include google-analytics.js -%}
+{%- endcapture -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Basic Page Info
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
+	<title>{{ site.title }}</title>
+
+	<!-- Search Engine Optimization
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	{%- seo title=false -%}
+
+	<!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Favicon
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ 'apple-touch-icon.png' | relative_url }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon-32x32.png' | relative_url }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon-16x16.png' | relative_url }}">
+	<link rel="manifest" href="{{ 'site.webmanifest' | relative_url }}">
+	<link rel="mask-icon" href="{{ 'safari-pinned-tab.svg" color="#D8D8D8' | relative_url }}">
+	<link rel="shortcut icon" href="{{ 'favicon.ico' | relative_url }}">
+	<meta name="apple-mobile-web-app-title" content="{ j }">
+	<meta name="application-name" content="{ j }">
+	<meta name="msapplication-TileColor" content="#D8D8D8">
+	<meta name="msapplication-config" content="{{ 'browserconfig.xml' | relative_url }}">
+	<meta name="theme-color" content="#D8D8D8">
+	
+	<!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->	
+	<style type="text/css">
+		{{ style | scssify | strip }}
+	</style>
+
+	<!-- JS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script type="text/javascript">
+		{{ scripts | normalize_whitespace }}
+	</script>
+</head>
+<body>
+
+	<!-- Primary Page Layout
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 25%">
+        <h3>{{ site.title | downcase }}</h3>
+        <p>
+					<a href="sms:{{ site.author.iMessage }}">
+						{%- include apple.svg -%}
+					</a> &Vert; 
+					<a href="https://github.com/{{ site.author.GitHub }}">
+						{%- include github.svg -%}
+					</a> &Vert; 
+					<a href="https://open.spotify.com/user/{{ site.author.Spotify }}">
+						{%- include spotify.svg -%}
+					</a>
+				</p>
+      </div>
+      <div class="one-half column">
+      	<div style="background-image: url('{{ site.logo | relative_url }}');" class="logo u-max-full-width"></div>
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->    			
+</body>
+</html>
