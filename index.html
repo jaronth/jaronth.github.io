@@ -19,21 +19,27 @@
     <meta name="theme-color" content="#ffffff">    
     <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
     <style type="text/css">
-  	 * {
-  	   text-align: center;
-  	   margin-top: 50px;
-  	 }
-  	 h1 {
-  	   font-family: 'Cutive Mono', monospace;
-  	 }
-  	 p {
-  	   font-size: 34px;
-  	 }
-  	 img.icon {
-  	   width: 24px;
-  	 }
+  	  h1 {
+  	    font-family: 'Cutive Mono', monospace;
+        text-align: center;
+  	  }
+  	  p {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        bottom: 24px;
+  	    width: 100%;
+        text-align: center;
+        font-size: 34px;
+  	  }
       img.logo {
+        display: block;
+        position: relative;
+        margin: 0 auto;
         width: 100px;
+      }
+      img.icon {
+        width: 24px;
       }
     </style>
     <script type="text/javascript">
@@ -50,15 +56,9 @@
   </head>
   <body>
     <h1>Jaron Householder</h1>
-    <img class="logo" src="assets/jaronth.png" />
+    <a href="sms:im@jaronth.com"><img class="logo" src="assets/jaronth.png" /></a>
     <p>
-      <a href="sms:im@jaronth.com"><img alt="iMessage" class="icon" src="assets/apple.svg" /></a>
-       | 
-  	  <a href="https://github.com/jaronth"><img alt="GitHub" class="icon" src="assets/github.svg" /></a>
-  	   | 
-  	  <a href="https://open.spotify.com/user/jaronhouseholder"><img alt="Spotify" class="icon" src="assets/spotify.svg" /></a>
-  	   | 
-  	  <a href="https://www.instagram.com/jaronhouseholder"><img alt="Instagram" class="icon" src="assets/instagram.svg" /></a>
+      <a href="https://www.buymeacoffee.com/jaronth"><img alt="Buy me a coffee" class="icon" src="assets/buymeacoffee.svg" /></a>
   	</p>
   </body>
 </html>
