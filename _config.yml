@@ -1,0 +1,27 @@
+# jaronhouseholder.com
+title: jaron householder
+description: >-
+  Jaron Householder. 
+  connect | code | coffee
+baseurl: ""
+url: "https://jaronhouseholder.com"
+
+# Google Analytics
+google_analytics: UA-63329353-1
+
+# About/contact
+author:
+  name:              Jaron Householder
+  url:               https://jaronhouseholder.com
+  GitHub:            jaronth
+  iMessage:          im@jaronth.com
+  BuyMeACoffee:      jaronth
+
+
+# Build settings
+markdown: kramdown
+collections_dir: assets
+collections:
+  icons:
+    output: true
+    permalink: :name
