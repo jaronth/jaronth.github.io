@@ -1,13 +1,31 @@
 ---
 ---
+{%- capture style -%}
+	{%- include fonts.css -%}
+	{%- include custom.css -%}
+{%- endcapture -%}  
+{%- capture scripts -%}
+  	{%- include google-analytics.js -%}
+{%- endcapture -%}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="description" content="{{ site.description }}">
-	<meta name="author" content="{{ site.author.name }}">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Basic Page Info
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
 	<title>{{ site.title }}</title>
+
+	<!-- Search Engine Optimization
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	{% seo title=false %}
+
+	<!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Favicon
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ 'apple-touch-icon.png' | relative_url }}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon-32x32.png' | relative_url }}">
 	<link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon-16x16.png' | relative_url }}">
@@ -18,26 +36,41 @@
 	<meta name="application-name" content="{ j }">
 	<meta name="msapplication-TileColor" content="#D8D8D8">
 	<meta name="msapplication-config" content="{{ 'browserconfig.xml' | relative_url }}">
-	<meta name="theme-color" content="#D8D8D8">    
-	<link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
-		
-	<style type="text/css">{%- capture css -%}{%- include style.css -%}{%- endcapture -%}{{ css | strip_newlines }}</style>
+	<meta name="theme-color" content="#D8D8D8">
 	
-	<script type="text/javascript">{%- capture js -%}{%- include google-analytics.js -%}{%- endcapture -%}{{ js | strip_newlines  }}</script>
+	<!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->	
+	<style type="text/css">{{ style | scssify | strip }}</style>
+
+	<!-- JS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script type="text/javascript">{{ scripts | normalize_whitespace }}</script>
 </head>
 <body>
-	<h1>{{ site.author.name }}</h1>
-	<img class="logo" alt="{ j }" src="{{ 'assets/jaronth.png' | relative_url }}" />
-	<p>
-		<a href="sms:{{ site.author.iMessage }}">
-			{%- include apple.svg -%}
-		</a> |
-		<a href="https://github.com/{{ site.author.GitHub }}">
-			{%- include github.svg -%}
-		</a> | 
-		<a href="https://www.buymeacoffee.com/{{ site.author.BuyMeACoffee }}">
-			{%- include buymeacoffee.svg -%}
-		</a>
-	</p>
+
+	<!-- Primary Page Layout
+  	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div class="container">
+    	<div class="row">
+    		<div style="background-image: url('{{ 'assets/jaronth.png' | relative_url }}'); height: 100vh; background-position: right bottom; background-repeat: no-repeat; background-size: contain; opacity:0.52;"></div>
+      		<div class="one-half column" style="position: absolute; top: 0; left: 0; margin-top: 25%">
+        		<h4>{{ site.title }}</h4>
+        		<p>
+					<a href="sms:{{ site.author.iMessage }}">
+						{%- include apple.svg -%}
+					</a> |
+					<a href="https://github.com/{{ site.author.GitHub }}">
+						{%- include github.svg -%}
+					</a> | 
+					<a href="https://www.buymeacoffee.com/{{ site.author.BuyMeACoffee }}">
+						{%- include buymeacoffee.svg -%}
+					</a>
+				</p>
+      		</div>
+    	</div>
+  	</div>
+
+<!-- End Document
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->    			
 </body>
 </html>
